@@ -1,2 +1,7 @@
+1.0.1 (June 20th, 2017)
+- Bug: Fixed issue with date formats and hover time
+- Removed PHP closing tags
+- Use THIS_SCRIPT for template caching
+
 1.0 (March 8th, 2017)
 - Initial release
