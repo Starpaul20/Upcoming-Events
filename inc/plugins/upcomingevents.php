@@ -161,7 +161,7 @@ function upcomingevents_run()
 			if($calendar_permissions[$event['cid']]['canviewcalendar'] == 1)
 			{
 				$event['name'] = htmlspecialchars_uni($event['name']);
-				$time = my_date($mybb->settings['dateformat'], $event['starttime']);
+				$time = my_date($mybb->settings['dateformat'], $event['starttime'], 0, 0);
 				$date = $lang->sprintf($lang->event_on, $time);
 				$event['link'] = get_event_link($event['eid']);
 
