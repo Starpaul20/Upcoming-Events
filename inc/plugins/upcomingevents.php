@@ -47,7 +47,7 @@ function upcomingevents_info()
 		"website"			=> "http://galaxiesrealm.com/index.php",
 		"author"			=> "Starpaul20",
 		"authorsite"		=> "http://galaxiesrealm.com/index.php",
-		"version"			=> "1.0.1",
+		"version"			=> "1.1",
 		"codename"			=> "upcomingevents",
 		"compatibility"		=> "18*"
 	);

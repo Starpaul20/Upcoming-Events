@@ -1,3 +1,7 @@
+1.1 (January 3rd, 2018)
+- Show Events on Portal (Issue #2)
+- Updated date variables
+
 1.0.1 (June 20th, 2017)
 - Bug: Fixed issue with date formats and hover time
 - Removed PHP closing tags
