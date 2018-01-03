@@ -151,7 +151,7 @@ min=1',
 
 	$insert_array = array(
 		'title'		=> 'index_upcomingevents_event',
-		'template'	=> $db->escape_string('{$comma}<a href="{$event[\'link\']}" title="{$date}">{$event[\'name\']}</a>'),
+		'template'	=> $db->escape_string('{$comma}<a href="{$event[\'link\']}" title="{$event[\'date\']}">{$event[\'name\']}</a>'),
 		'sid'		=> '-1',
 		'version'	=> '',
 		'dateline'	=> TIME_NOW
@@ -181,7 +181,7 @@ min=1',
 
 	$insert_array = array(
 		'title'		=> 'portal_upcomingevents_event',
-		'template'	=> $db->escape_string('{$comma}<a href="{$event[\'link\']}" title="{$date}">{$event[\'name\']}</a>'),
+		'template'	=> $db->escape_string('{$comma}<a href="{$event[\'link\']}" title="{$event[\'date\']}">{$event[\'name\']}</a>'),
 		'sid'		=> '-1',
 		'version'	=> '',
 		'dateline'	=> TIME_NOW
@@ -241,8 +241,8 @@ function upcomingevents_run()
 			if($calendar_permissions[$event['cid']]['canviewcalendar'] == 1)
 			{
 				$event['name'] = htmlspecialchars_uni($event['name']);
-				$time = my_date($mybb->settings['dateformat'], $event['starttime'], 0, 0);
-				$date = $lang->sprintf($lang->event_on, $time);
+				$event['time'] = my_date($mybb->settings['dateformat'], $event['starttime'], 0, 0);
+				$event['date'] = $lang->sprintf($lang->event_on, $event['time']);
 				$event['link'] = get_event_link($event['eid']);
 
 				eval("\$events .= \"".$templates->get('index_upcomingevents_event', 1, 0)."\";");
@@ -293,8 +293,8 @@ function upcomingevents_portal()
 			if($calendar_permissions[$event['cid']]['canviewcalendar'] == 1)
 			{
 				$event['name'] = htmlspecialchars_uni($event['name']);
-				$time = my_date($mybb->settings['dateformat'], $event['starttime'], 0, 0);
-				$date = $lang->sprintf($lang->event_on, $time);
+				$event['time'] = my_date($mybb->settings['dateformat'], $event['starttime'], 0, 0);
+				$event['date'] = $lang->sprintf($lang->event_on, $event['time']);
 				$event['link'] = get_event_link($event['eid']);
 
 				eval("\$events .= \"".$templates->get('portal_upcomingevents_event', 1, 0)."\";");
