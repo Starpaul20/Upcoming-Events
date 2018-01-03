@@ -5,7 +5,7 @@ Created by: Starpaul20
 Copyright: ©2017
 License: GPL
 
-Displays a list of upcoming calendar events on the index.
+Displays a list of upcoming calendar events on the index and portal.
 
 This plugin offers full language support.
 

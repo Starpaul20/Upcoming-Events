@@ -5,7 +5,7 @@
  */
 
 $l['upcomingevents_info_name'] = "Upcoming Events";
-$l['upcomingevents_info_desc'] = "Displays a list of upcoming calendar events on the index.";
+$l['upcomingevents_info_desc'] = "Displays a list of upcoming calendar events on the index and portal.";
 
 $l['upcoming_events'] = "Upcoming Events";
 $l['event_on'] = "Event on {1}";
