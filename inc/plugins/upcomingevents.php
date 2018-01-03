@@ -204,6 +204,7 @@ function upcomingevents_deactivate()
 
 	include MYBB_ROOT."/inc/adminfunctions_templates.php";
 	find_replace_templatesets("index_boardstats", "#".preg_quote('{$calendar}')."#i", '', 0);
+	find_replace_templatesets("portal", "#".preg_quote('{$calendar}')."#i", '', 0);
 }
 
 // Display calendar events on index
