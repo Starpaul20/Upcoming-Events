@@ -192,7 +192,7 @@ min=1',
 	$db->insert_query("templates", $insert_array);
 
 	// Update templates
-	include MYBB_ROOT."/inc/adminfunctions_templates.php";
+	require_once MYBB_ROOT."/inc/adminfunctions_templates.php";
 	find_replace_templatesets("index_boardstats", "#".preg_quote('{$birthdays}')."#i", '{$birthdays}{$calendar}');
 	find_replace_templatesets("portal", "#".preg_quote('{$whosonline}')."#i", '{$whosonline}{$calendar}');
 }
@@ -205,7 +205,7 @@ function upcomingevents_deactivate()
 	$db->delete_query("settings", "name IN('showevents','eventscalendar','eventscut','portal_showevents','portal_eventscalendar','portal_eventscut')");
 	rebuild_settings();
 
-	include MYBB_ROOT."/inc/adminfunctions_templates.php";
+	require_once MYBB_ROOT."/inc/adminfunctions_templates.php";
 	find_replace_templatesets("index_boardstats", "#".preg_quote('{$calendar}')."#i", '', 0);
 	find_replace_templatesets("portal", "#".preg_quote('{$calendar}')."#i", '', 0);
 }
