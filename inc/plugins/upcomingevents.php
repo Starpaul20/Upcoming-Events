@@ -11,24 +11,27 @@ if(!defined("IN_MYBB"))
 }
 
 // Neat trick for caching our custom template(s)
-if(THIS_SCRIPT == 'index.php')
+if(defined('THIS_SCRIPT'))
 {
-	global $templatelist;
-	if(isset($templatelist))
+	if(THIS_SCRIPT == 'index.php')
 	{
-		$templatelist .= ',';
+		global $templatelist;
+		if(isset($templatelist))
+		{
+			$templatelist .= ',';
+		}
+		$templatelist .= 'index_upcomingevents,index_upcomingevents_event';
 	}
-	$templatelist .= 'index_upcomingevents,index_upcomingevents_event';
-}
 
-if(THIS_SCRIPT == 'portal.php')
-{
-	global $templatelist;
-	if(isset($templatelist))
+	if(THIS_SCRIPT == 'portal.php')
 	{
-		$templatelist .= ',';
+		global $templatelist;
+		if(isset($templatelist))
+		{
+			$templatelist .= ',';
+		}
+		$templatelist .= 'portal_upcomingevents,portal_upcomingevents_event';
 	}
-	$templatelist .= 'portal_upcomingevents,portal_upcomingevents_event';
 }
 
 // Tell MyBB when to run the hooks
