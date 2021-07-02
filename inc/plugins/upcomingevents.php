@@ -239,6 +239,7 @@ function upcomingevents_run()
 
 		$calendar_permissions = get_calendar_permissions();
 
+		$events = '';
 		$query = $db->simple_select("events", "*", "{$cidwhere} AND starttime < '{$forthcoming}' AND starttime > '{$now}' AND private='0' AND visible='1'", array('order_by' => 'starttime', 'order_dir' => 'asc'));
 		while($event = $db->fetch_array($query))
 		{
@@ -291,6 +292,7 @@ function upcomingevents_portal()
 
 		$calendar_permissions = get_calendar_permissions();
 
+		$events = '';
 		$query = $db->simple_select("events", "*", "{$cidwhere} AND starttime < '{$forthcoming}' AND starttime > '{$now}' AND private='0' AND visible='1'", array('order_by' => 'starttime', 'order_dir' => 'asc'));
 		while($event = $db->fetch_array($query))
 		{
